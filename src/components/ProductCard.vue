@@ -4,15 +4,17 @@
     @mouseover="hover = true"
     @mouseleave="mouseLeave"
   >
+    <!-- product image -->
     <picture>
-      <!-- <source :srcset="product.image_src[0]" media="(min-width: 400px)"> -->
       <source :srcset="product.image_src[0]">
       <img class="card__image" :alt="product.name" :title="product.name" :src="product.image_src[0]" width="260" height="346">
     </picture>
+    
+    <!-- card details -->
     <div class="card__details">
       <div class="product__top">
-        
-          <!-- :style="(hover && !selected_varient) ? {display:'block'}: {display:'none'}" -->
+
+        <!-- product varient -->
         <div
           class="product__varient border-box"
           :style="(hover && !selected_varient) ? {display:'block'}: {display:'none'}"
@@ -25,19 +27,29 @@
             :key='varient.id'
             @click="selected_varient = varient.value"
           >
+            <!-- get alias varient names from store and populate if avaialble -->
             {{sizeVarientMap[varient.value] || varient.value}}
           </span>
           <div style="clear: both;"></div>
         </div>
+
+        <!-- add to cart -->
         <div class="add_to_cart border-box" :style="hover && selected_varient ? {display:'block'}: {display:'none'}">
           <button @click="addToCart">{{addToCartLabel}}</button>
         </div>
+
+        <!-- product vendor -->
         <h3 :style="hover ? {display:'none'}: {display:'block'}" class="product__vendor text-capitalize">{{product.vendor}}</h3>
       </div>
-        <h4 class="product__name ellipsis text-capitalize">{{product.name}}</h4>
+
+      <!-- product name -->
+      <h4 class="product__name ellipsis text-capitalize">{{product.name}}</h4>
+
+      <!-- product price -->
       <div class="product__price">
         <span class="product__price--discounted">{{currency.symbol}}{{product.price}}</span>
         <span class="product__price--mrp">{{currency.symbol}}{{product.compare_at_price}}</span>
+        <!-- calculate perentage difference of 'price' and 'compare_at_price' and populate -->
         <span v-if='show_discount_perentage' class="product__price--discount-percentage text-uppercase">({{discount_perentage}}% off)</span>
       </div>
     </div>
@@ -62,10 +74,14 @@ export default {
     }
   },
   computed: {
+
+    // calculate perentage difference of 'price' and 'compare_at_price'
     discount_perentage() {
       const discount = `${((parseInt(this.product.compare_at_price) - parseInt(this.product.price)) / parseInt(this.product.compare_at_price)) * 100}`;
       return Math.round(discount);
     },
+    
+    // show discount field only if 'price' < 'compare_at_price'
     show_discount_perentage () {return parseInt(this.product.price) < parseInt(this.product.compare_at_price)}
   },
   methods: {
@@ -80,7 +96,6 @@ export default {
       this.selected_varient= ''
     }
   },
-  // mounted(){console.log('card mounted')}
 }
 </script>
 

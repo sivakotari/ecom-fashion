@@ -1,4 +1,5 @@
 <template>
+  <!-- body of whole application stats here -->
   <div class="main">
     <Filters />
     <ProductsList />

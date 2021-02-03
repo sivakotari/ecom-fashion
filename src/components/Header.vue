@@ -1,4 +1,5 @@
 <template>
+  <!-- app header includes logo, nav items and cart -->
   <header class="header__wrapper">
     <div class="header__nav flex-center border-box">
       <div class="app-logo cursor-pointer flex-center">S</div>

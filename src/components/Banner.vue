@@ -1,5 +1,7 @@
 <template>
+  <!-- page banner -->
   <div class="home__banner flex-center">
+    <!-- get banner data from store -->
     <h3 class="banner__text">{{banner.text}}</h3>
     <button class="banner__action cursor-pointer">{{banner.action_text}}</button>
   </div>

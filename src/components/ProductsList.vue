@@ -1,8 +1,12 @@
 <template>
   <div class='cards__wrapper'>
+
+    <!-- show card placeholder on loading -->
     <div class='cards__container' v-if='loading'>
       <ProductPlaceholder v-for='i in placeholdersCount' :key='i' />
     </div>
+
+    <!-- render cards on products data available -->
     <div class='cards__container' v-else>
       <ProductCard
         v-for='product in renderList'
@@ -14,6 +18,8 @@
         :addToCartLabel='addToCartLabel'
         :selectVarientLabel='selectVarientLabel'
       />
+
+      <!-- dummy cards if less product cards, for flex style support -->
       <div class="dummy" v-for='i in 6' :key='i'></div>
     </div>
   </div>
@@ -46,21 +52,15 @@ export default {
       'addToCartLabel',
       'renderList'
     ]),
-    // renderList() {
-    //   console.log('u',this.productsList,this.filteredTag);
-    //   return this.productsList[this.filteredTag];
-    // },
   },
   mounted() {
     this.fetchProducts();
-    // this.getFilterTags();
     this.$nextTick(()=>{
       console.log('m',this.productsList,this.filteredTag,'' ,this.productsList[this.filteredTag]);
 
     },5000);
   },
   updated() {
-    // console.log('u',this.productsList,this.filteredTag);
   }
 }
 </script>

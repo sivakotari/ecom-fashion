@@ -1,4 +1,5 @@
 <template>
+  <!-- get incart products list from store and upate cart with animation-->
   <div class="cart__wrapper cursor-pointer" :data-inCart="inCartList.length" :key="inCartList.length">
     <font-awesome-icon :icon="['fas', 'shopping-cart']" />
   </div>

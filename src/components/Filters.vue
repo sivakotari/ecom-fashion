@@ -1,12 +1,19 @@
 <template>
+  <!-- product filtering by tag name -->
   <div class="filter__wrapper">
+
+    <!-- populate selected filter tag and count from store-->
     <div class="filter__header text-capitalize">
       <h2 class="filter__title">{{filteredTag === 'all' ? labelAllproducts : filteredTag}}</h2>
       <span class="filter__count" v-if='renderList && renderList.length'>({{renderList.length}} products)</span>
     </div>
+
+    <!-- populate all available labels from products data from store and populate -->
     <div class="filter__tags-wrapper">
       <span class="filter__lable text-uppercase">{{filterLabel}}:</span>
       <div class="filter__text-wrapperr">
+
+        <!-- toggle active class -->
         <span class="filter__text cursor-pointer text-capitalize" :class="{'active': filteredTag === 'all'}" @click="filter('all')">{{labelAllproducts}}</span>
         <span class="filter__text cursor-pointer text-capitalize" :class="{'active': filteredTag === tag}" v-for="tag in filterTags" :key="tag" @click="filter(tag)">{{tag}}</span>
       </div>
@@ -28,9 +35,6 @@ export default {
   computed: {
     ...mapGetters(['filterTags', 'filterLabel', 'labelAllproducts', 'filteredTag', 'renderList'])
   },
-  mounted() {
-    // this.getFilterTags();
-  }
 }
 </script>
 
