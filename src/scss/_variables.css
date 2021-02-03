@@ -1,0 +1,32 @@
+:root {
+  --font-family: 'Roboto', sans-serif;
+  
+  /* font-weights */
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  /* font sizes */
+  --fs-12: 12px;
+  --fs-13: 13px;
+  --fs-14: 14px;
+  --fs-16: 16px;
+  --fs-18: 18px;
+  --fs-21: 21px;
+
+  /* color palette */
+  --color-black: #000;
+  --color-subtitle: #878787;
+  --color-red: tomato;
+  --color-orange: #ED4E08;
+  --color-gray: #181716;
+  --color-border: #C4C4C4;
+  --color-white: #fff;
+  --color-separator: #E5E5E5;
+  --color-plaveholder-start: #EEE;
+  --color-plaveholder-end: #DDD;
+
+  --card-box-shadow: 0 2px 6px 2px rgb(70 70 70 / 8%)
+  
+}

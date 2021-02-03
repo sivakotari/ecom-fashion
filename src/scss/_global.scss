@@ -1,0 +1,33 @@
+
+// @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*{
+  transition: border .3s ease-out;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.cursor-pointer {
+  cursor: pointer
+}
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.border-box {
+  box-sizing: border-box;
+}
+.active {
+  color: var(--color-black);
+  border-color: var(--color-black);
+}
