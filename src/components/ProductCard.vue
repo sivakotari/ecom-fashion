@@ -7,7 +7,7 @@
     <picture>
       <!-- <source :srcset="product.image_src[0]" media="(min-width: 400px)"> -->
       <source :srcset="product.image_src[0]">
-      <img class="card__image" :alt="product.name" :title="product.name" :src="product.image_src[0]">
+      <img class="card__image" :alt="product.name" :title="product.name" :src="product.image_src[0]" width="260" height="346">
     </picture>
     <div class="card__details">
       <div class="product__top">

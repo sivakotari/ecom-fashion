@@ -9,7 +9,7 @@ export default {
     filteredTag: 'all',
     filterTags: [],
     filteredList: {},
-    placeholdersCount: 12,
+    placeholdersCount: 10,
     loading: false,
     selectVarientLabel: 'Select Size',
     addToCartLabel: 'Add To Cart',
